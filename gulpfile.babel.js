@@ -6,7 +6,7 @@ const requireDir = require("require-dir"),
     paths = {
         views: {
             src: [
-                "./src/views/**/*.html",
+                "./src/views/*.html",
                 "./src/views/pages/*.html"
             ],
             dist: "./dist/",
@@ -45,9 +45,9 @@ const requireDir = require("require-dir"),
             watch: "./src/img/sprites/*.svg"
         },
         fonts: {
-            src: "./src/fonts/**/*.{woff,woff2}",
+            src: "./src/fonts/**/*",
             dist: "./dist/fonts/",
-            watch: "./src/fonts/**/*.{woff,woff2}"
+            watch: "./src/fonts/**/*"
         },
         favicons: {
             src: "./src/img/favicon/*.{jpg,jpeg,png,gif}",

@@ -1,0 +1,47 @@
+.footer
+  background-color: var(--accent)
+  padding: 40px 0
+  &__wrap
+    display: flex
+    color: white
+    flex-wrap: wrap
+  &__contacts
+    width: calc(100%/12 * 4 - 60px)
+    margin-right: 60px
+  &__name
+    line-height: 1.618
+    font-size: rem(18px)
+    font-weight: bold
+    margin-bottom: rem(9px)
+  &__links-block
+    width: calc(100%/12 * 2 - 60px)
+    margin-right: 60px
+    &:last-child
+      margin-right: 0
+      width: calc(100%/12 * 2)
+  &__link
+    line-height: 1.2
+    color: #fff
+    margin-bottom: rem(9px)
+    display: block
+    max-width: max-content
+    &:last-child
+      margin-bottom: 0
+
+.author
+  padding: 10px 0
+  background-color: #000
+  &__wrap
+    color: rgba(255,255,255, .85)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-size: em(14px)
+    font-weight: 500
+  &__link
+    text-decoration: none
+    color: inherit
+    transition: .2s ease color
+    will-change: color
+    &:hover
+      color: var(--accent)

@@ -1,0 +1,76 @@
+.text-box
+  color: #000
+  max-width: 800px
+  h1
+    font-size: em(36px)
+    font-weight: 600
+    margin: 0 0 rem(10px)
+    line-height: 1.41
+  h2
+    font-size: em(32px)
+    margin: 0 0 rem(10px)
+    line-height: 1.41
+  h3, h4, h5
+    font-size: em(30px)
+    margin: 0 0 rem(10px)
+    line-height: 1.41
+  p
+    font-size: em(16px)
+    margin: 0 0 rem(15px)
+    line-height: 1.68
+  a
+    text-decoration: none
+    font-weight: 600
+    color: #000
+    display: inline-block
+    transform: translateX(0)
+    position: relative
+    transition: .2s ease
+    &::after
+      content: ''
+      width: 106%
+      right: -3%
+      bottom: 1px
+      height: 2px
+      background: #000
+      display: block
+      position: absolute
+      border-radius: 2px 0
+      transition: .2s ease
+  ol
+    padding-left: rem(25px)
+    margin-bottom: 15px
+  ul
+    list-style: none
+    margin-bottom: 15px
+    & li::before
+      content: '—'
+      display: inline-block
+      margin-right: 10px
+  li
+    font-size: em(16px)
+    margin: 0 0 rem(8px)
+    line-height: 1.41
+
+  img
+    margin: 5px 0 20px
+    object-fit: cover
+    width: 100%
+    max-height: 70vh
+    border-radius: 2px
+    overflow: hidden
+
+  +to(1199px)
+    /* */
+
+  +to(991px)
+    /* */ 
+
+  +to(767px)
+    /* */ 
+
+  +to(575px)
+    /* */
+
+  +to(375px)
+    /* */

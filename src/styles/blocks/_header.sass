@@ -1,0 +1,113 @@
+.header
+  padding: 16px 0
+  transition: background .2s ease
+  position: relative
+  &__wrap
+    display: flex
+    align-items: center
+    font-family: 'Montserrat', sans-serif
+    +to(768px)
+      justify-content: space-between
+  &__phone
+    display: flex
+  &__logo
+    width: 130px
+    margin-right: 70px
+    +to(768px)
+      margin-right: 0
+  &__nav-box
+    margin-right: 70px
+    +to(768px)
+      display: none
+      position: absolute
+      z-index: 1
+      bottom: 0
+      left: 0
+      transform: translateY(100%)
+      width: 100%
+      padding: 20px 20px 30px
+      background-color: #fff
+      &.active
+        display: block
+
+.logo
+  &__link
+    text-decoration: none
+    font-weight: bold
+    color: #000
+
+.phone
+  color: #000
+  text-decoration: none
+  font-size: em(18px)
+  font-weight: 600
+  transition: .2s ease
+  white-space: nowrap
+
+.nav
+  position: relative
+  display: flex
+  list-style: none
+  +to(768px)
+    flex-direction: column
+    align-items: center
+    gap: 12px
+  &__item
+    margin-right: rem(30px)
+    font-size: rem(18px)
+    border-bottom: 1px solid #e3e3e3
+    transition: .2s ease border
+    +to(768px)
+      padding: 0 0 4px
+      width: auto
+      margin: 0
+    &:last-child
+      margin-right: 0
+      +to(768px)
+        margin: 0
+    &:hover
+      border-bottom: 1px solid var(--accent)
+      .nav__link
+        color: var(--accent)
+    &.active
+      border-bottom: 1px solid var(--accent)
+      .nav__link
+        color: var(--accent)
+  &__link
+    text-decoration: none
+    color: #000
+    transition: .2s ease color
+
+.burger
+  display: none
+  justify-content: space-between
+  flex-direction: column
+  height: 28px
+  width: 30px
+  padding: 4px
+  background: none
+  border: none
+  +to(768px)
+    display: flex
+  &__line
+    width: 100%
+    height: 2px
+    border-radius: 2px
+    display: block
+    background: #000
+    transition: transform .3s ease
+    &:nth-child(1)
+      transform-origin: right
+    &:nth-child(2)
+      transform: scaleX(1)
+      transform-origin: center
+    &:nth-child(3)
+      transform-origin: right
+  &.active
+    .burger__line
+      &:nth-child(1)
+        transform: rotate(-45deg) scale(1.15) !important
+      &:nth-child(2)
+        transform: scaleX(0) !important
+      &:nth-child(3)
+        transform: rotate(45deg) scale(1.15) !important
