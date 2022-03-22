@@ -12,12 +12,12 @@
 ## :hammer_and_wrench: Установка
 * установите [NodeJS](https://nodejs.org/en/)
 * установите глобально:
-    * [Yarn](https://yarnpkg.com/getting-started): ```npm i -g yarn```
-    * [Gulp](https://gulpjs.com/): ```npm i -g gulp```
-    * [Bem Tools](https://www.npmjs.com/package/bem-tools-core): ```npm i -g bem-tools-core```
-* установка версии yarn ```yarn set version berry```
-* скачать зависимости: ```yarn```
-* ```yarn run dev``` (режим разработки)
+    * [Yarn](https://yarnpkg.com/getting-started): ```0. npm i -g yarn```
+    * [Gulp](https://gulpjs.com/): ```0. npm i -g gulp```
+    * [Bem Tools](https://www.npmjs.com/package/bem-tools-core): ```0. npm i -g bem-tools-core```
+* установка версии yarn ```1. yarn set version berry```
+* скачать зависимости: ```2. yarn```
+* ```3. yarn run dev``` (режим разработки)
 * ```yarn run build``` (режим сборки)
 * ```yarn install``` (update the lockfile)
 
