@@ -78,9 +78,8 @@ export const development = gulp.series("clean",
 export const prod = gulp.series("clean",
     gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons", "gzip"]));
 
-export const ftp = gulp.series(
-    // "clean",
-    // gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons", "gzip"]),
+export const ftp = gulp.series("clean",
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons", "gzip"]),
     gulp.parallel("deploy"));
 
 export default development;
