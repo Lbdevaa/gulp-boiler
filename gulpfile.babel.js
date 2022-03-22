@@ -39,10 +39,15 @@ const requireDir = require("require-dir"),
             dist: "./dist/img/",
             watch: "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg,ico,webp}"
         },
-        sprites: {
-            src: "./src/img/sprites/*.svg",
+        spriteMono: {
+            src: "./src/img/sprites/mono/*.svg",
             dist: "./dist/img/sprites/",
-            watch: "./src/img/sprites/*.svg"
+            watch: "./src/img/sprites/mono/*.svg"
+        },
+        spriteMulti: {
+            src: "./src/img/sprites/multi/*.svg",
+            dist: "./dist/img/sprites/",
+            watch: "./src/img/sprites/multi/*.svg"
         },
         fonts: {
             src: "./src/fonts/**/*",
@@ -67,10 +72,10 @@ requireDir("./gulp-tasks/");
 export { paths };
 
 export const development = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons"]),
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons"]),
     gulp.parallel("serve"));
 
 export const prod = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons", "gzip"]));
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons", "gzip"]));
 
 export default development;
