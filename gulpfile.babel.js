@@ -17,7 +17,7 @@ const requireDir = require("require-dir"),
         },
         styles: {
             src: "./src/styles/main.{scss,sass}",
-            dist: "./dist/styles/",
+            dist: "./dist/css/",
             watch: [
                 "./src/blocks/**/*.{scss,sass}",
                 "./src/styles/**/*.{scss,sass}"
@@ -54,6 +54,11 @@ const requireDir = require("require-dir"),
             dist: "./dist/fonts/",
             watch: "./src/fonts/**/*"
         },
+        libs: {
+            src: "./src/libs/**/*",
+            dist: "./dist/libs/",
+            watch: "./src/libs/**/*"
+        },
         favicons: {
             src: "./src/img/favicon/*.{jpg,jpeg,png,gif}",
             dist: "./dist/img/favicons/",
@@ -72,14 +77,14 @@ requireDir("./gulp-tasks/");
 export { paths };
 
 export const development = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons"]),
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "libs", "favicons"]),
     gulp.parallel("serve"));
 
 export const prod = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons", "gzip"]));
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "libs", "favicons", "gzip"]));
 
 export const ftp = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "favicons", "gzip"]),
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "spriteMono", "spriteMulti", "fonts", "libs", "favicons", "gzip"]),
     gulp.parallel("deploy"));
 
 export default development;
