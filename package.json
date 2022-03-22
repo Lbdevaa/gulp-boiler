@@ -1,12 +1,13 @@
 {
     "name": "gulp-boiler",
+    "version": "1.0.0",
     "description": "Development with pleasure",
-    "author": "Merak",
-    "license": "",
     "repository": {
-        "type": "git",
-        "url": ""
+        "url": "https://github.com/Merakaa/gulp-boiler",
+        "type": "git"
     },
+    "author": "Merak",
+    "license": "MIT",
     "scripts": {
         "dev": "gulp",
         "build": "gulp prod --production",
