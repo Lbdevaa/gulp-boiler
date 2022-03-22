@@ -2,18 +2,19 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "es6": true,
+        "es2017": true,
         "node": true
     },
-    // "extends": "eslint:recommended",
+    "files": [
+        "src/js*/*.js"
+    ],
     "extends": [
-        "eslint:recommended"
-        // "standard",
-        // "htmlacademy/es6"
+        "eslint:recommended",
+        "htmlacademy/vanilla"
     ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 2019,
         "sourceType": "module"
     },
     "rules": {
