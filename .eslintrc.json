@@ -5,7 +5,12 @@
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    // "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended"
+        // "standard",
+        // "htmlacademy/es6"
+    ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaVersion": 6,
@@ -14,19 +19,19 @@
     "rules": {
         "indent": [
             "error",
-            4
+            2
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            "error",
+            "backtick"
         ],
         "linebreak-style": [
             "error",
             "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
         ]
     }
 }
