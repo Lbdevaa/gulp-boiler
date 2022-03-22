@@ -46,9 +46,9 @@ gulp.task("styles", () => {
                 }
             }
         })))
-        .pipe(gulpif(production, rename({
+        .pipe(rename({
             suffix: ".min"
-        })))
+        }))
         .pipe(plumber.stop())
         .pipe(gulpif(!production, sourcemaps.write("./maps/")))
         .pipe(gulp.dest(paths.styles.dist))
