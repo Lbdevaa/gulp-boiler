@@ -10,7 +10,6 @@
 .env
 .yarn/cache
 .yarn/install-state.gz
-.yarn
 ehthumbs.db
 Thumbs.db
 _config.yml
