@@ -5,6 +5,7 @@
 .Trashes
 .idea
 .vscode
+*.sublime*
 .github
 .env
 .yarn/cache
@@ -13,5 +14,12 @@ ehthumbs.db
 Thumbs.db
 _config.yml
 node_modules
-dist
 package-lock.json
+
+# Вспомогательные файлы
+*.log*
+
+# Папка с собранными файлами проекта
+dist
+
+gulp-tasks/ftpSettings.json

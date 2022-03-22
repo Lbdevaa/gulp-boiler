@@ -1,15 +1,15 @@
 "use strict";
 
 import gulp from "gulp";
-const ftp = require('vinyl-ftp');
-const ftpSettings = require('../tasks/ftpSettings');
-const chalk = require('chalk');
+import ftp from "vinyl-ftp";
+import chalk from "chalk";
+
+const ftpSettings = require('../gulp-tasks/ftpSettings');
 const connect = ftp.create(ftpSettings);
 
-module.exports = function deploy() {
-  return src(['build/**/*.*', '!build/**/*.map'])
+gulp.task("deploy", () => {
+  return gulp.src(['dist/**/*.*', '!dist/**/*.map'])
     .pipe(connect.newer('/test'))
     .pipe(connect.dest('/test'))
-    .on('finish', () => console.log(`Finished deploing ./build to https://${chalk.blueBright(ftpSettings.host)} ${chalk.redBright(`OLD FILES NO CLEARED`)}`))
-
-}
+    .on('finish', () => console.log(`${chalk.cyan(`Finished deploing./ dist`)} to https://${chalk.bgBlue(ftpSettings.host)} ${chalk.yellow(`OLD FILES NO CLEARED`)}`))
+});

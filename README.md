@@ -170,5 +170,8 @@ node -v ```16.14.2```
 ## Для добавления своих пакетов
 ```yarn add --dev``` или ```yarn add -D```
 
+## FTP
+Создать файл ```gulp-tasks/ftpSettings.json``` по аналогии  ```gulp-tasks/ftpSettings-example.json```
+
 ## :point_right: Погнали!
 
