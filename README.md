@@ -26,14 +26,19 @@
 ## :open_file_folder: Файловая структура
 
 ```
-gulp-scss-starter
+gulp-boiler
 ├── dist
 ├── gulp-tasks
 ├── src
 │   ├── blocks
 │   ├── fonts
 │   ├── img
+│       ├── favicon
+│       ├── sprites
+│           ├── mono
+│           ├── multi
 │   ├── js
+│   ├── libs
 │   ├── styles
 │   ├── views
 │   └── .htaccess
@@ -63,7 +68,7 @@ gulp-scss-starter
 * Папка ```src``` - используется во время разработки:
     * БЭМ-блоки: ```src/blocks```
     * шрифты: ```src/fonts```
-    * изображения: ```src/img```
+    * изображения (включая спрайты и фавикон): ```src/img```
     * JS-файлы: ```src/js```
     * страницы сайта: ```src/views/pages```
     * SCSS-файлы: ```src/styles```
@@ -76,13 +81,14 @@ gulp-scss-starter
 * ```yarn run lint:styles``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint). Для WebStorm
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint```
 * ```yarn run dev``` - запуск сервера для разработки проекта
+* * ```yarn run ftp``` - отправка на фтп собранного проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
 * ```yarn run build:views``` - собрать HTML-файлы
 * ```yarn run build:styles``` - скомпилировать SCSS-файлы
 * ```yarn run build:scripts``` - собрать JS-файлы
 * ```yarn run build:images``` - собрать изображения
 * ```yarn run build:webp``` - сконвертировать изображения в формат ```.webp```
-* ```yarn run build:sprites```- собрать спрайты
+
 * ```yarn run build:fonts``` - собрать шрифты
 * ```yarn run build:favicons``` - собрать фавиконки
 * ```yarn run build:gzip``` - собрать конфигурацию Apache
@@ -125,12 +131,13 @@ blocks
 * изображения находятся в папке ```src/img```
     * изображения автоматически конвертируются в формат ```.webp```. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp)
     * изображение для генерации фавиконок должно находиться в папке ```src/img/favicon``` и иметь размер не менее ```1024px x 1024px```
+     
 
 ### SVG-спрайты
-Для создания спрайтов изображения ```.svg``` должны находиться в папке ```src/img/sprites```. Например, у нас есть файлы ```icon-1.svg```, ```icon-2.svg``` и ```icon-3.svg```, и мы должны обратиться к ```icon-2.svg```. Для этого в HTML нужно воспользоваться тегом ```<use>```:
+Для создания спрайтов изображения ```.svg``` должны находиться в папке ```src/img/sprites/mono```. Подпапка mono / multi определяет кол-во цветов иконки. Например, у нас есть файлы ```icon-1.svg```, ```icon-2.svg``` и ```icon-3.svg```, и мы должны обратиться к ```icon-2.svg```. Для этого в HTML нужно воспользоваться тегом ```<use>```:
 ```html
 <svg>
-    <use xlink:href="img/sprites/sprite.svg#logo"></use>
+    <use xlink:href="img/sprites/mono.svg#logo"></use>
 </svg>
 ```
 Изменить стили svg-иконки из спрайта в CSS:
@@ -139,18 +146,8 @@ svg use {
     fill: red;
 }
 ```
-Бывает такая ситуация, когда стили иконки поменять не получается. Это связано с тем, что при экспорте из Figma в svg добавляется лишний код. Например:
-```html
-<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M4.90918 4.04542L13.091 9.54088L4.90918 14.9545L4.90918 4.04542Z" fill="#1B1B1D"/>
-</svg>
-```
-Нужно удалить ```fill="none"``` и ```fill="#1B1B1D"```. Должно получиться так:
-```html
-<svg width="18" height="19" viewBox="0 0 18 19" xmlns="http://www.w3.org/2000/svg">
-  <path d="M4.90918 4.04542L13.091 9.54088L4.90918 14.9545L4.90918 4.04542Z"/>
-</svg> 
-```
+Удалять лишний код (fill, storke, style...) из svg  не нужно.
+
 
 ### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```
@@ -167,11 +164,15 @@ yarn -v ```1.22.15```
 npm -v ```8.5.5```
 node -v ```16.14.2```
 
+## Версия yarn release на проект
+```3.2.0```
+
 ## Для добавления своих пакетов
 ```yarn add --dev``` или ```yarn add -D```
 
-## FTP
-Создать файл ```gulp-tasks/ftpSettings.json``` по аналогии  ```gulp-tasks/ftpSettings-example.json```
+## FTP (Опционально)
+Создать файл ```gulp-tasks/ftpSettings.json``` по аналогии  ```gulp-tasks/ftpSettings-example.json```.
+В противном случае убрать этот таск.
 
 ## :point_right: Погнали!
 
