@@ -15,7 +15,7 @@
     * [Yarn](https://yarnpkg.com/getting-started): ```0. npm i -g yarn```
     * [Gulp](https://gulpjs.com/): ```0. npm i -g gulp```
     * [Bem Tools](https://www.npmjs.com/package/bem-tools-core): ```0. npm i -g bem-tools-core```
-* установка версии yarn ```1. yarn set version berry```
+* установка версии yarn ```1. yarn set version berry``` - создаст файл .yarn\releases\yarn-x.x.x.cjs и опишет в .yarnrc.yml
 * скачать зависимости: ```2. yarn```
 * ```3. yarn run dev``` (режим разработки)
 * ```yarn run build``` (режим сборки)
