@@ -172,7 +172,6 @@ node -v ```16.14.2```
 
 ## FTP (Опционально)
 Создать файл ```gulp-tasks/ftpSettings.json``` по аналогии  ```gulp-tasks/ftpSettings-example.json```.
-В противном случае убрать этот таск.
 
 ## :point_right: Погнали!
 

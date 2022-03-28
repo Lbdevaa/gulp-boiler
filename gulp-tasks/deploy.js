@@ -4,7 +4,10 @@ import gulp from "gulp";
 import ftp from "vinyl-ftp";
 import chalk from "chalk";
 
-const ftpSettings = require('../gulp-tasks/ftpSettings');
+const fs = require('fs')
+const path = 'gulp-tasks/ftpSettings.json'
+const ftpSettings = fs.existsSync(path) ? require('../gulp-tasks/ftpSettings') : require('../gulp-tasks/ftpSettings-example');
+
 const connect = ftp.create(ftpSettings);
 
 gulp.task("deploy", () => {
