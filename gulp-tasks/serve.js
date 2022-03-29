@@ -19,4 +19,5 @@ gulp.task("serve", () => {
     gulp.watch(paths.spriteMulti.watch, gulp.parallel("spriteMulti"));
     gulp.watch(paths.images.watch, gulp.parallel("images"));
     gulp.watch(paths.fonts.watch, gulp.parallel("fonts"));
+    gulp.watch(paths.docs.watch, gulp.parallel("docs"));
 });
