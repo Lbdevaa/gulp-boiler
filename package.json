@@ -6,8 +6,8 @@
         "url": "https://github.com/Merakaa/gulp-boiler",
         "type": "git"
     },
-    "author": "Merak",
-    "license": "MIT",
+    "author": "Lbdevaa",
+    "license": "GNU GENERAL PUBLIC LICENSE",
     "scripts": {
         "dev": "gulp",
         "ftp": "gulp ftp --production",
